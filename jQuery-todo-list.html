@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>todoList</title>
+</head>
+<body>
+
+	<h1>My To Do List</h1>
+	<ul id="toDoList"></ul>
+	<input type="text" id="addToDoList" placeholder="add new todoList">
+	<button id="add">Add To List</button>
+
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script type="text/javascript">
+ 	$(document).ready(function() {
+ 		$("#add").on("click", function() {
+ 			var text = $("#addToDoList").val();
+ 			if(text.length > 0) {
+ 				$("#toDoList").append("<li>" + text + "</li>");
+ 			}	
+ 		});
+ 	});	
+ </script>
+</body>
+</html>
