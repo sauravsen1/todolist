@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+<body>
+<input id="task">
+<button onclick="test()" id="add">Add</button>
+<p id="demo"></p>
+ 
+<script>    
+
+function test(){
+    var sub_array = [];
+    var value = document.getElementById("task").value;
+    sub_array.push(value);
+    document.getElementById("demo").innerHTML = sub_array;
+}
+</script>
+</body>
+</html>
