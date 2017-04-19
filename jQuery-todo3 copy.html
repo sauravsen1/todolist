@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+<body>
+<input id="task0">
+<input id="task1">
+<input id="task2">
+<input id="task3">
+<input id="task4">
+<button onclick="test()" id="add">Add</button>
+<p id="demo"></p>
+ 
+<script>    
+function indexOfInput(sub_array, id) {
+    var index = -1;
+    for(var i = 0 ; i< sub_array.length; i++) {
+        if (id === sub_array[i].id) {
+            index = i;
+        }
+    }
+    return index;
+}
+var sub_array = [];
+function test(){ 
+    for(var i =0; i< 5; i++)  {
+    var value = document.getElementById("task"+i).value;
+    var index = indexOfInput(sub_array, "task"+i);
+    if (index === -1) {
+        sub_array.push({id: "task"+i, value });
+    } else {
+        sub_array[index].value = value;
+    }
+    // 
+
+    }
+    console.log(sub_array);
+}
+</script>
+</body>
+</html>

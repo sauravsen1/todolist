@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+<div id="myDIV" class="header">
+  <h2>My To Do List</h2>
+  <input type="text" id="myInput" placeholder="Title...">
+  <button onclick="newElement()" class="addBtn">Add</button>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  function newElement() {
+    var myArray = [];
+    var value = document.getElementById("myInput").value;  
+    myArray.push(value);
+    var paragraph = document.createElement("p");
+    paragraph.innerHTML = myArray;
+    document.body.appendChild(paragraph);
+    var datebtn = document.createElement('button');
+    datebtn.innerHTML = "x";
+    datebtn.className = "close";
+    paragraph.appendChild(datebtn);
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+    
+  }
+</script>
+</body>
+</html>
