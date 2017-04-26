@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+		<input type="text" id="input"/>
+        <button onclick="pushValue()">add text</button>
+        <div id="demo"></div>
+        <div id="demo2"></div>
+	</div>
+    <script>
+        var getValues = [];
+        function pushValue() {
+          var input = document.getElementById("input").value;
+          getValues.push(input);
+          show();
+        };
+        
+        function show() {
+          var text = "<ul>";
+          for(var i=0; i< getValues.length; i++) {
+            text += '<li>' + getValues[i] + '<button class="remove" onclick="deletes(this.id)" id="' + i + '"  >x</button></li>';
+          }    
+          text += "</ul>";
+          document.getElementById("demo").innerHTML = text;
+        };  
+
+        function deletes(checked_id) {
+           var currentId = parseInt(checked_id);
+          getValues.splice(currentId,1);
+          show();
+        };
+
+         
+    </script>
+</body>
+</html>
