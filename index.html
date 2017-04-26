@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+		<input type="text" id="input"/>
+        <button onclick="myfunc1()">add text</button>
+        <div id="demo"></div>
+        <div id="demo2"></div>
+	</div>
+    <script>
+        var myArray = [];
+        function myfunc1() {
+          var input = document.getElementById("input").value;
+          myArray.push(input);
+          myfunc2();
+        };
+        
+        function myfunc2() {
+          var text = "<ul>";
+          for(var i=0; i< myArray.length; i++) {
+            text += '<li>' + myArray[i] + '<button class="remove" onclick="deletes(this.id)" id="' + i + '"  >x</button></li>';
+          }    
+          text += "</ul>";
+          document.getElementById("demo").innerHTML = text;
+         // document.getElementById("demo2").innerHTML = myArray;
+         //delete();
+        };  
+
+        function deletes(checked_id) {
+           var currentId = parseInt(checked_id);
+          myArray.splice(currentId,1);
+          myfunc2();
+          // for (var i=0; i < buttons.length; i++) {
+          //   buttons[i].addEventListener('click', myArray.splice(buttons[i],1));
+           
+          //   document.getElementById("demo").innerHTML = text;
+          // }; 
+        };
+
+         
+    </script>
+</body>
+</html>
